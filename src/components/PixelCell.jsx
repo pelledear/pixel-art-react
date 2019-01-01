@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GRID_INITIAL_COLOR = '#313131';
+const GRID_INITIAL_COLOR = '#FFFFFF';
 
 export default class PixelCell extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -18,7 +18,7 @@ export default class PixelCell extends React.Component {
     } = this.props;
     const styles = {
       width: `${width}%`,
-      paddingBottom: `${width}%`,
+      paddingBottom: `${width * 0.75}%`,
       backgroundColor: color || GRID_INITIAL_COLOR
     };
 

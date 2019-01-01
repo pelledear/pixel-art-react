@@ -5,12 +5,9 @@ import CellSizeContainer from './CellSize';
 import ColorPickerContainer from './ColorPicker';
 import ModalContainer from './Modal';
 import DimensionsContainer from './Dimensions';
-import CssDisplayContainer from './CssDisplay';
-import DurationContainer from './Duration';
 import EraserContainer from './Eraser';
 import BucketContainer from './Bucket';
 import EyedropperContainer from './Eyedropper';
-import FramesHandlerContainer from './FramesHandler';
 import PaletteGridContainer from './PaletteGrid';
 import ResetContainer from './Reset';
 import SaveDrawingContainer from './SaveDrawing';
@@ -20,6 +17,7 @@ import SimpleSpinnerContainer from './SimpleSpinner';
 import UndoRedoContainer from './UndoRedo';
 import initialSetup from '../utils/startup';
 import drawHandlersProvider from '../utils/drawHandlersProvider';
+import DownloadPDF from './DownloadPDF';
 
 export default class App extends React.Component {
   constructor() {
@@ -74,19 +72,6 @@ export default class App extends React.Component {
           fadeOutTime={1500}
           duration={1500}
         />
-        <div
-          className="app__frames-container"
-          data-tooltip={
-            this.state.helpOn
-              ? `Create an awesome animation secuence.
-              You can modify the duration of each frame, changing its own value.
-              The number indicates where the frame ends in a range from 0 to 100.
-              `
-              : null
-          }
-        >
-          <FramesHandlerContainer />
-        </div>
         <div className="app__central-container">
           <div className="left col-1-4">
             <div className="app__left-side">
@@ -165,19 +150,6 @@ export default class App extends React.Component {
               </div>
               <div className="app__mobile--container">
                 <div className="app__mobile--group">
-                  <button
-                    className="app__copycss-button"
-                    onClick={() => {
-                      this.changeModalType('copycss');
-                    }}
-                    data-tooltip={
-                      this.state.helpOn ? 'Check your CSS generated code' : null
-                    }
-                  >
-                    css
-                  </button>
-                </div>
-                <div className="app__mobile--group">
                   <div className="app__social-container">
                     <div
                       data-tooltip={
@@ -228,6 +200,11 @@ export default class App extends React.Component {
           </div>
           <div className="right col-1-4">
             <div className="app__right-side">
+              <div data-tooltip={
+                this.state.helpOn ? 'Download your work as a PDF' : null
+              }>
+                <DownloadPDF />
+              </div>
               <div className="app__mobile--container">
                 <div className="app__mobile--group">
                   <button
@@ -266,20 +243,10 @@ export default class App extends React.Component {
                   >
                     <CellSizeContainer />
                   </div>
-                  <div
-                    data-tooltip={
-                      this.state.helpOn ? 'Animation duration in seconds' : null
-                    }
-                  >
-                    <DurationContainer />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="css-container">
-          <CssDisplayContainer />
         </div>
         {this.state.showCookiesBanner ? (
           <CookieBanner

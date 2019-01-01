@@ -1,0 +1,8 @@
+.download {
+  button {
+    @mixin button gray;
+
+    width: 100%;
+    margin: 0 0 0.6em;
+  }
+}
