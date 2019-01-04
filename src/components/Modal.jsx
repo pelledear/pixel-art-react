@@ -24,25 +24,12 @@ class Modal extends React.Component {
         }
       ];
 
-      if (props.frames.size > 1) {
-        const spritesheetSupport =
-          props.type === 'download' || props.type === 'twitter';
-
-        const animationOption = {
-          value: 'animation',
-          label: spritesheetSupport ? 'GIF' : 'animation',
-          id: 4
-        };
-        options.push(animationOption);
-
-        if (spritesheetSupport) {
-          options.push({
-            value: 'spritesheet',
-            label: 'spritesheet',
-            id: 5
-          });
-        }
-      }
+      const repeatedOption = {
+        value: 'repeated',
+        label: 'repeated',
+        id: 4
+      };
+      options.push(repeatedOption);
     } else {
       options = [
         { value: 'storage', label: 'Stored', id: 0 },
