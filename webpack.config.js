@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   mode: "development",
-  devtool: 'cheap-module-source-map',            
+  devtool: 'cheap-module-source-map',
   entry: [
     './src/index.jsx',
     'whatwg-fetch'
@@ -34,6 +34,10 @@ module.exports = {
       {
         test: /\.(ttf|eot|svg|woff(2)?)(\?v=[\d.]+)?(\?[a-z0-9#-]+)?$/,
         loader: 'url-loader?limit=100000&name=./css/[hash].[ext]'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader'
       }
     ]
   },
