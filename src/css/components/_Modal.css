@@ -21,4 +21,9 @@
       }
     }
   }
+
+  .stitches {
+    background-image: url('../assets/stitch-invert.png');
+    z-index: 5;
+  }
 }

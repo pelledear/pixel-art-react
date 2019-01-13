@@ -17,7 +17,8 @@ const Preview = props => {
     const styles = {
       previewWrapper: {
         height: cellSize,
-        width: cellSize
+        width: cellSize,
+        transform: 'scale(1, 0.75)'
       }
     };
 
@@ -50,11 +51,25 @@ const Preview = props => {
   const { columns, rows, cellSize } = props.storedData || props;
   const style = {
     width: columns * cellSize,
-    height: rows * cellSize
+    height: rows * cellSize,
+    position: 'relative'
+  };
+  const bgheight = cellSize * .75;
+  const bgsize = `${cellSize}px ${bgheight}px`;
+  console.log(bgsize);
+  const stitches = {
+    height: '75%',
+    width: '100%',
+    position: 'absolute',
+    top: cellSize * 0.75,
+    left: cellSize,
+    marginTop: '.5%',
+    backgroundSize: bgsize
   };
 
   return (
     <div className="preview" style={style}>
+      <div className="stitches" style={stitches}></div>
       {generatePreview()}
     </div>
   );

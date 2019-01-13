@@ -74,11 +74,11 @@
 }
 
 @define-extend columns {
-  content: '\6b';
+  content: '\6a';
 }
 
 @define-extend rows {
-  content: '\6a';
+  content: '\6b';
 }
 
 @define-extend help {

@@ -14,7 +14,7 @@
 
     &:before {
       content: '';
-      /*display: block;*/
+      display: none;
       position: absolute;
       z-index: 10;
       top: 0;

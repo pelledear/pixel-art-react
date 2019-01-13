@@ -24,7 +24,7 @@ class Modal extends React.Component {
         }
       ];
 
-      const repeatedOption = {
+        const repeatedOption = {
         value: 'repeated',
         label: 'repeated',
         id: 4
@@ -108,33 +108,6 @@ class Modal extends React.Component {
               setDrawing: props.actions.setDrawing,
               sendNotification: props.actions.sendNotification
             }}
-          />
-        );
-        break;
-      case 'copycss':
-        content = (
-          <CopyCSS
-            frames={props.frames}
-            columns={props.columns}
-            rows={props.rows}
-            cellSize={props.cellSize}
-            activeFrameIndex={props.activeFrameIndex}
-            animationCode={this.state.previewType !== 'single'}
-            duration={props.duration}
-          />
-        );
-        break;
-      case 'download':
-        content = (
-          <DownloadDrawing
-            frames={props.frames}
-            activeFrame={props.activeFrame}
-            columns={props.columns}
-            rows={props.rows}
-            cellSize={props.cellSize}
-            duration={props.duration}
-            downloadType={this.state.previewType}
-            actions={{ sendNotification: props.actions.sendNotification }}
           />
         );
         break;
