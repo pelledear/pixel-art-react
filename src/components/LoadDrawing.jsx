@@ -89,7 +89,7 @@ export default class LoadDrawing extends React.Component {
           return dataStored.stored.map((data, i) => {
             const elem = {
               animate: data.animate,
-              cellSize: 5, // Unify cellsize for load preview
+              cellSize: 20, // Unify cellsize for load preview
               columns: data.columns,
               frames: fromJS(data.frames), // Parse to immutable
               paletteGridData: fromJS(data.paletteGridData),

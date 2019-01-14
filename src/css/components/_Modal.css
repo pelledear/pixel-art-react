@@ -3,6 +3,11 @@
     @mixin button blue;
   }
 
+  .modal__preview {
+    background-color: #525c6c;
+    border-radius: 20px;
+  }
+
   .modal__preview,
   .modal__load {
     margin: 2em 0 1em;

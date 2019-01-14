@@ -8,7 +8,7 @@
   font-size: 1em;
   text-decoration: none;
   transition-duration: 0.1s;
-  color: $color-text;
+  color: #fff;
   background-color: $color-bg;
   box-shadow: 0 5px 0 0 $color-boxshadow;
 

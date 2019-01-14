@@ -5,6 +5,8 @@
   margin: 0 auto;
   width: 90%;
   touch-action: none;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 
   div {
     float: left;

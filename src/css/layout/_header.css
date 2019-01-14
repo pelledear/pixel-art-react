@@ -1,6 +1,6 @@
 header {
   padding: 0 1.4em;
-  color: $color-silver;
+  color: #204caf;
   lost-utility: clearfix;
 
   .header__credits {

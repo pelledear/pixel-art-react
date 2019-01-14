@@ -25,7 +25,7 @@ export default class App extends React.Component {
     this.state = {
       modalType: null,
       modalOpen: false,
-      helpOn: false,
+      helpOn: true,
       showCookiesBanner: true
     };
     Object.assign(this, drawHandlersProvider(this));
@@ -83,31 +83,6 @@ export default class App extends React.Component {
             <div className="app__left-side">
               <div className="app__mobile--container">
                 <div className="app__mobile--group">
-                  <div data-tooltip={this.state.helpOn ? 'New project' : null}>
-                    <NewProjectContainer />
-                  </div>
-                  <div className="app__load-save-container">
-                    <button
-                      className="app__load-button"
-                      onClick={() => {
-                        this.changeModalType('load');
-                      }}
-                      data-tooltip={
-                        this.state.helpOn
-                          ? 'Load projects you stored before'
-                          : null
-                      }
-                    >
-                      LOAD
-                    </button>
-                    <div
-                      data-tooltip={
-                        this.state.helpOn ? 'Save your project' : null
-                      }
-                    >
-                      <SaveDrawingContainer />
-                    </div>
-                  </div>
                   <div
                     data-tooltip={
                       this.state.helpOn ? 'Undo Redo actions' : null
@@ -154,49 +129,6 @@ export default class App extends React.Component {
                   <PaletteGridContainer />
                 </div>
               </div>
-              <div className="app__mobile--container">
-                <div className="app__mobile--group">
-                  <div className="app__social-container">
-                    <div
-                      data-tooltip={
-                        this.state.helpOn
-                          ? 'Tweet your creation in different formats'
-                          : null
-                      }
-                    >
-                      <button
-                        className="app__twitter-button"
-                        onClick={() => {
-                          this.changeModalType('twitter');
-                        }}
-                      />
-                    </div>
-                    <div
-                      data-tooltip={
-                        this.state.helpOn
-                          ? 'Download your creation in different formats'
-                          : null
-                      }
-                    >
-                      <button
-                        className="app__download-button"
-                        onClick={() => {
-                          this.changeModalType('download');
-                        }}
-                      />
-                    </div>
-                    <div data-tooltip="Toggle help tooltips">
-                      <button
-                        className={`app__toggle-help-button
-                          ${this.state.helpOn ? ' selected' : ''}`}
-                        onClick={() => {
-                          this.toggleHelp();
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div className="center col-2-4">
@@ -206,13 +138,33 @@ export default class App extends React.Component {
           </div>
           <div className="right col-1-4">
             <div className="app__right-side">
-              <div data-tooltip={
-                this.state.helpOn ? 'Download your work as a PDF' : null
-              }>
-                <DownloadPDF />
-              </div>
               <div className="app__mobile--container">
                 <div className="app__mobile--group">
+                  <div data-tooltip={this.state.helpOn ? 'New project' : null}>
+                    <NewProjectContainer />
+                  </div>
+                  <div className="app__load-save-container">
+                    <button
+                      className="app__load-button"
+                      onClick={() => {
+                        this.changeModalType('load');
+                      }}
+                      data-tooltip={
+                        this.state.helpOn
+                          ? 'Load projects you stored before'
+                          : null
+                      }
+                    >
+                      Load
+                    </button>
+                    <div
+                      data-tooltip={
+                        this.state.helpOn ? 'Save your project' : null
+                      }
+                    >
+                      <SaveDrawingContainer />
+                    </div>
+                  </div>
                   <button
                     className="app__preview-button"
                     onClick={() => {
@@ -224,30 +176,22 @@ export default class App extends React.Component {
                         : null
                     }
                   >
-                    PREVIEW
+                    Preview
                   </button>
-                  <div
-                    data-tooltip={
-                      this.state.helpOn ? 'Reset the selected frame' : null
-                    }
-                  >
-                    <ResetContainer />
+
+                  <div data-tooltip={
+                    this.state.helpOn ? 'Download your work as a PDF' : null
+                  }>
+                    <DownloadPDF />
                   </div>
+                </div>
+                <div className="app__mobile--group">
                   <div
                     data-tooltip={
                       this.state.helpOn ? 'Number of columns and rows' : null
                     }
                   >
                     <DimensionsContainer />
-                  </div>
-                </div>
-                <div className="app__mobile--group">
-                  <div
-                    data-tooltip={
-                      this.state.helpOn ? 'Size of one tile in px' : null
-                    }
-                  >
-                    <CellSizeContainer />
                   </div>
                 </div>
               </div>

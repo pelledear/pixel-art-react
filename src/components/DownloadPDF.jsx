@@ -28,7 +28,7 @@ export default class DownloadPDF extends Component {
     return (
       <div>
         <div className="download">
-          <button onClick={this.printDocument}>DOWNLOAD</button>
+          <button onClick={this.printDocument}>Download</button>
         </div>
       </div>
     );

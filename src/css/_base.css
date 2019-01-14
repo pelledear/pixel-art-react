@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background-color: $color-scorpion;
+  background: url('../assets/country-quilt.png');
   overflow-x: hidden;
 }
 
